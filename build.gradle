@@ -23,6 +23,32 @@ dependencies {
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // Para JPA y transacciones
+	implementation 'org.springframework:spring-tx' // Solo para manejo transaccional
+	runtimeOnly 'mysql:mysql-connector-java:8.0.33'
+	compileOnly 'org.projectlombok:lombok:1.18.30' // Usa la versión más reciente disponible
+	annotationProcessor 'org.projectlombok:lombok:1.18.30'
+	implementation 'de.mkammerer:argon2-jvm:2.11'
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.5' // Usa la última versión disponible
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5' // Para manejar JSON con Jackson
+	implementation 'javax.xml.bind:jaxb-api:2.3.1'
+	runtimeOnly 'org.glassfish.jaxb:jaxb-runtime:2.3.1'
+	// Dependencia principal de Spring Security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	// Dependencia opcional: JWT para autenticación basada en tokens
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+
+	// Dependencia opcional: Seguridad para pruebas (si usas Spring Security en pruebas)
+	testImplementation 'org.springframework.security:spring-security-test'
+	// Spring Boot Validation
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	// Spring Boot DevTools
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 }
 
 tasks.named('test') {
